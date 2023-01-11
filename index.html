@@ -10,20 +10,25 @@
         img {
             border: green 5px solid;
         }
-        ol li {
-            display: inline;
-            color: white;
-            background-color: black;
-            font-weight: bold;
-            margin: 25px;
-            padding: 25px;
-        }
+        
         #imagen {
-           
+            width: 80vw;
+            height: auto;
         }
+        
         .distorsion {
             width: 100%;
             height: 10vh;
+        }
+        
+        .ol,
+        li {
+            display: inline;
+            margin: 25px;
+            padding: 25px;
+            background-color: black;
+            color: white;
+            font-weight: bold;
         }
     </style>
     <script src="./js/main.js"></script>
@@ -34,8 +39,12 @@
         <li>CSS3</li>
         <li>JavaScript</li>
     </ol>
-    <a href="./doc/LenguajeJava.pdf" target="_blank" title=""></a>
     <br>
-
+    <br>
+    <a href="./doc/LenguajeJava.pdf" target="_blank" title="Los mejores apuntes">Apuntes Java Script</a>
+    <br>
+    <img id="imagen" class="distorsion" src="./img/img1.jpg" alt="imagen1">
+    <img class="distorsion" src="./img/img2.webp" alt="imagen2">
+    <img style="border: red 10px solid;" src="./img/img3.jpg" alt="imagen3">
 </body>
 </html>
