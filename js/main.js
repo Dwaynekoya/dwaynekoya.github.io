@@ -1,1 +1,0 @@
-alert("Por favor despierten");
