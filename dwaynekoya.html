@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwaynekoya</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!--FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
+    <!--FONTAWESOME-->
+    <script src="https://kit.fontawesome.com/700d30a34e.js" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</head>
+<body>
+    <div class="hero">
+        <header>
+            <span class="headertext">
+                software developer
+                <!--un h1 aqui tbporque aunque aqui este todo en el mismo proyecto la idea seria que fueran paginas separadas-->
+                <h1>dwaynekoya</h1>
+            </span>
+        </header>
+    </div>
+    <!--MENU LATERAL-->
+    <div>
+        <nav id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <h3><a href="#top">DWAYNEKOYA</a></h3>
+            <ul>
+                <li><a href="#about" class="smoothscroll">About me</a></li>
+                <li><a href="#technologies" class="smoothscroll">Technologies I've used</a></li>
+                <li><a href="#workexperience" class="smoothscroll">Work experience</a></li>
+            </ul>
+            
+            <!--these are placeholders there is no social media to link-->
+            <ul class="s-header__social">
+                <li>
+                    <a href="#0">
+                        <i class="fa-brands fa-discord"></i>
+                        <span class="u-screen-reader-text">Discord</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#0">
+                        <i class="fa-brands fa-twitter"></i>
+                        <span class="u-screen-reader-text">Twitter</span>
+                    </a>
+                </li>
+            </ul> 
+        </nav>
+    </div>
+    <span id="openSideNav" onclick="openNav()">MENU</span>
+    <section id="aboutMe">
+        <div id="infoAM">
+            <h2>#AboutME</h2> 
+        My first contact with web development was playing around in online forums and setting up custom Tumblr themes. I also started learning some Python after getting interested in Ren'py (a simplified version of Python) visual novels and playing around with the engine to make my own. Since I liked the experience I kept practicing with Python. <br>
+        I decided to follow vocational studies for multiplatform app development and I'm now starting up my programming work journey after spending 3 years working as a freelance artist along my studies.<br>
+        During my studies I had to use Java, MySQL, HTML5+CSS3, Javascript...
+        <hr>
+        Currently focused on Java programming, my end goal is to keep a few projects built for making daily-life management more pleasing and rewarding for the end user. <br>
+        I also dabble on writing tools and DM tools for roleplaying tabletop games.
+        </div>
+        
+        <div class="diamondImg">
+            <img src="./img/avatar.jpeg" alt="Self-portrait sketch">
+        </div>
+        <div id="technologies">
+            <h2>Technologies</h2>
+            <ul>
+                <li>HTML + CSS</li>
+                <li>Javascript</li>
+                <li>Java</li>
+                <li>Python</li>
+                <li>MySQL</li>
+            </ul>
+        </div>
+    </section>
+    <section id="artComms">
+        <span><a class="commLink" href="https://dwaynekoya.wixsite.com/commissioninfo">looking for art? click here instead</a></span>
+        <div class="imageMasonry">
+            <figure class="wide"><img src="./img/arte/wide1.jfif" alt=""></figure>
+            <figure><img src="./img/arte/1.jfif" alt=""></figure>
+            <figure><img src="img/arte/tall1.jfif" alt=""></figure>
+            <figure><img src="./img/arte/tall2.jfif" alt=""></figure>
+            <figure class="wide"><img src="./img/arte/wide2.jfif" alt=""></figure>
+            <figure><img src="./img/arte/2.jfif" alt=""></figure>
+        </div>
+    </section>
+    <!--f perdi el css de aqui para abajo-->
+    <section id="experience">
+        <h2>Work experience</h2>
+        <h3>Position + Workplace</h3>
+        Nothing to see here yet
+    </section>
+    <section id="projects">
+        <h2>Past projects</h2>
+        <div class="showcase">
+            <div class="thumbnail">
+                <div class="thumbnail__overlay">
+                    <a class="btn" href="./index.html">DETAILS</a>
+                </div>
+            </div>
+            <div class="desc">
+                <p>???</p>
+                <h3>NOUS - Tabletop roleplaying-game</h3>
+                A Work In Progress ttrpg using a custom app/discord bot for character management, puzzles and the usual dice rolls.<br>
+                Dystopian setting, focus on character building and user interaction. 
+            </div>
+        </div>
+        <div class="showcase showcase--inverted">
+            <div class="desc">
+                <p>HTML+CSS(SASS)</p>
+                <h3>Personal webpage</h3>
+                This webpage! 
+            </div>
+            <div class="thumbnail">
+                <div class="thumbnail__overlay" id="thumb2">
+                    <a class="btn" href="#0">DETAILS</a>
+                </div>
+            </div>
+        </div>
+        <div class="showcase">
+            <div class="thumbnail">
+                <div class="thumbnail__overlay">
+                    <a class="btn" href="#0">DETAILS</a>
+                </div>
+            </div>
+            <div class="desc">
+                <p>HTML+CSS(SASS)</p>
+                <h3>RPG webpage</h3>
+                Webpage designed to show info for a tabletop roleplaying game.
+            </div>
+        </div>
+
+    </section>
+    <footer>© Dwaynekoya</footer>
+    
+</body>
+</html>
