@@ -165,18 +165,7 @@ $size: 15vw;
   grid-column-start: 2;
   grid-column-end: 5;
 }
-.diamondImg {
-  display: block;
-  margin: 0 auto;
-  margin-top: 100px;
-  width: 15vw;
-  transform: rotate(45deg);
-  overflow: hidden;
-}
-.diamondImg img {
-  max-width: 15vw;
-  transform: rotate(-45deg) scale(1.42);
-}
+
 /*ABOUT ME*/
 #aboutMe::before{
   display: none;
@@ -193,9 +182,14 @@ $size: 15vw;
   justify-content: center;
   margin: 0 auto;  
 }
-#aboutMe .diamondImg img{
-  max-height: 50vh;
-  min-height: 10vh;
+.diamondImg {
+  margin: 0 auto;
+  margin-top: 1em;
+  overflow: hidden;
+}
+
+#aboutMe .diamondImg {
+  max-width: 65vw;
   grid-area: img;
   text-align: center;
   padding: 20px;
@@ -209,11 +203,11 @@ $size: 15vw;
   "info info tech tech"
   "info info tech tech";
   }
-  #aboutMe .diamondImg img{
-    max-height: 30vh;
+  #aboutMe .diamondImg {
+    max-width: 30vw;
     grid-area: img;
     text-align: center;
-    padding: 20px;
+    margin-top: 100px;
   }
 }
 
