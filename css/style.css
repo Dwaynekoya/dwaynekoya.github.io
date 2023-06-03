@@ -534,6 +534,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 80dvw;
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: contain;
+     object-fit: contain;
 }/*# sourceMappingURL=style.css.map */
