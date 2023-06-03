@@ -1,0 +1,80 @@
+.commLink {
+  position: relative;
+}
+
+a {
+  color: #F9A933;
+  text-decoration: none;
+}
+
+.commLink::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #F9A933;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .commLink:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
+#artComms {
+  text-align: center;
+}
+
+/*ABOUT ME*/
+#aboutMe::before {
+  display: none;
+}
+
+#aboutMe {
+  max-width: 70vw;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-column-gap: 3em;
+  grid-template-areas: "info" "tech" "img";
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.diamondImg {
+  margin: 0 auto;
+  margin-top: 1em;
+  overflow: hidden;
+}
+
+#aboutMe .diamondImg {
+  max-width: 65vw;
+  grid-area: img;
+  text-align: center;
+  padding: 20px;
+}
+
+@media only screen and (min-width: 40em) {
+  #aboutMe {
+    grid-template-columns: repeat(1fr, 4);
+    grid-column-gap: 3em;
+    grid-template-areas: "info info img img" "info info img img" "info info tech tech" "info info tech tech";
+  }
+  #aboutMe .diamondImg {
+    max-width: 30vw;
+    grid-area: img;
+    text-align: center;
+    margin-top: 100px;
+  }
+}
+#infoAM {
+  grid-area: info;
+}
+
+#technologies {
+  grid-area: tech;
+}/*# sourceMappingURL=portfolioPage.css.map */

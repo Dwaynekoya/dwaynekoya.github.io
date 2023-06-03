@@ -1,0 +1,155 @@
+body {
+  background-color: #1e1e1e;
+  color: #d9d9d9;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 200;
+}
+
+.headertext {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  text-align: right;
+}
+
+.hero {
+  font-size: 2rem;
+  min-width: 100%;
+  min-height: 100vh;
+  background-image: url("../img/yards.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* background-image: linear-gradient(to right, url("../img/yards.jpg") 0%, url("../img/yards.jpg") 50%,*/
+  /*$colorfondo 50%, $colorfondo 100%);*/
+}
+
+a {
+  font-size: 2em;
+  color: #166464;
+}
+
+a:hover {
+  color: #F9A933;
+}
+
+h1 {
+  color: #F9A933;
+  font-size: 10vw;
+}
+
+h2 {
+  font-size: 1.5em;
+  border-left: 4px solid #166464;
+  padding-left: 10px;
+  margin: 1em 0 1em 0;
+}
+
+ul {
+  /*w/o this the bullet for each list element would be outside the container for the ul*/
+  list-style-position: inside;
+}
+
+section {
+  /*lineas al principio y final de cada section en el fondo*/
+  /*background-image:linear-gradient($colorprimario 0em, $colorprimario 4em, hsla(0, 0%, 0%, 0) 4em,  hsla(0, 0%, 0%, 0) 20em, $colorprimario 20em, $colorprimario 21em);*/
+  /* min-height: 100vh;*/
+  margin-top: 4em;
+  margin-bottom: 4em;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 90vw;
+  min-height: 50vh;
+}
+
+section::before {
+  content: "";
+  background: #166464;
+  /*w/o width n height it wouldnt show up since there is no content*/
+  width: 100%;
+  height: 1em;
+  font-size: 20px;
+  display: block;
+  margin: 1em 0 1em 0;
+  flex: 0 0 100%;
+}
+
+section::after {
+  content: "";
+  background: #166464;
+  width: 100%;
+  height: 1em;
+  font-size: 5px;
+  display: block;
+  margin: 1em 0 1em 0;
+  flex: 0 0 100%;
+}
+
+footer {
+  background-image: linear-gradient(#1e1e1e, #166464);
+  text-align: center;
+}
+
+hr {
+  margin: 2em;
+  border: solid #166464 2px;
+}
+
+.baseGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.barImg {
+  width: 100vw;
+  height: 10vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/*INTRODUCTION GRID*/
+.introGrid {
+  grid-template-areas: "gen" "img" "lft" "rght";
+  grid-gap: 1em;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 40em) {
+  .baseGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .introGrid {
+    grid-template-areas: "gen gen img img" "gen gen img img" "lft lft rght rght";
+    grid-gap: 1em;
+    justify-content: center;
+  }
+}
+#generalIntro {
+  grid-area: gen;
+}
+
+#leftIntro {
+  grid-area: lft;
+}
+
+#rightIntro {
+  grid-area: rght;
+}
+
+.introGrid > img {
+  grid-area: img;
+  width: 20vw;
+  display: block;
+  margin: auto;
+}
+
+/*INFO GRID*/
+.infoRow {
+  grid-column: span 3;
+}
+
+.rightInfoRow {
+  grid-column-start: 2;
+  grid-column-end: 5;
+}/*# sourceMappingURL=main.css.map */

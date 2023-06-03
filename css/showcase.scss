@@ -1,0 +1,171 @@
+$colorfondo: #1e1e1e;
+$colorprimario: #166464;
+$colorsecundario: #F9A933;
+$colortexto: #d9d9d9;
+$size: 15vw;
+
+/*this is for project showcase*/
+$height: 17em;
+$width: 90vw;
+$transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
+
+// Wrapper
+.showcase {
+  position: relative;
+  max-width: $width;
+  min-height: $height;
+  margin: 1em auto;
+  overflow: hidden;
+  
+  background: transparent;
+}
+
+// Thumbnails
+.thumbnail {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 300px;
+  z-index: 1;
+  
+  background: $colorprimario;
+  background-position: 50% 50%;
+  background-size: cover;
+  
+  transition: right 250ms $transition, left 250ms $transition;
+}
+
+.thumbnail__overlay {
+  position: relative;
+  padding-top: calc($height / 2) - 0.5em;
+  height: 100%;
+  
+  background: $colorprimario;
+  
+  text-align: center;
+  
+  opacity: 0;
+  
+  transition: opacity 250ms $transition;
+}
+
+// Description
+.desc {
+  position: absolute;
+  max-width: 30em;
+  height: 100%;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 2;
+  
+  background: $colorfondo;
+  color: $colortexto;
+  
+  text-align: center;
+  
+  transition: background 250ms $transition, color 250ms, width 250ms $transition, padding 250ms $transition;
+  
+  &:after {
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    margin-top: -10px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent #fff transparent transparent;
+    content: "";
+    transition: border-color 250ms;
+  }
+}
+
+.showcase:hover {
+  
+  .thumbnail {
+    right: 325px;
+    left: -25px;
+  }
+  .thumbnail__overlay {
+    opacity: 1;
+  }
+  .desc {
+    max-width: 30em;
+    padding-left: 45px;
+    padding-right: 45px;
+    
+    background: $colorprimario;
+    
+    color: $colortexto;
+    & h3 {
+      color:$colorsecundario;
+    }
+    
+    &:after {
+      border-color: transparent #202426 transparent transparent;
+    }
+  }
+}
+
+
+// left side info right side img
+.showcase--inverted .thumbnail {
+  right: 0;
+  left: 300px;
+}
+
+.showcase--inverted .desc {
+  max-width: 30em;
+  left: 0;
+  right: auto;
+  & h3 {
+    color:$colorsecundario;
+  }
+  &:after {
+    left: auto;
+    right: -20px;
+    border-color: transparent transparent transparent #fff;
+  }
+}
+
+.showcase--inverted:hover {
+  
+  .thumbnail {
+    left: 325px;
+    right: -25px;
+  }
+
+  .desc {
+    
+    &:after {
+      border-color: transparent transparent transparent $colorsecundario;
+    }
+  }
+}
+
+// Button styling
+.btn {
+  padding: 1em 2em;
+  border: 0.15em solid $colortexto;
+  
+  color: $colortexto;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 2vh;
+  transition: background 250ms;
+  
+  &:hover {
+    background: rgba(0,0,0,0.6);
+  }
+}
+@media only screen and (max-width: 600px)  {
+  .desc {
+    max-width: 40vw;
+  }
+  .thumbnail {
+    width: auto;
+  }
+}
