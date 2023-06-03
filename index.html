@@ -12,7 +12,6 @@
     <script src="https://kit.fontawesome.com/700d30a34e.js" crossorigin="anonymous"></script>
     <!--JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="./js/main.js"></script>
     <title>Syphira</title>
 </head>
 <!--id para poder saltar aqui-->
@@ -35,7 +34,7 @@
                 <li><a href="#info" class="smoothscroll">About</a></li>
                 <li><a href="#inspo" class="smoothscroll">Similar works</a></li>
             </ul>
-            
+            <hr>
             <!--these are placeholders there is no social media to link-->
             <ul class="s-header__social">
                 <li>
@@ -71,6 +70,12 @@
                 <img src="./img/d20.png" alt="Image of a 20-faced dice">
             </div>
         </section>
+        <div class="discordLink">
+            <a href="#0">
+                <i class="fa-brands fa-discord fa-2x"></i>
+                <i class="fa-brands fa-twitter fa-2x"></i>
+            </a>
+        </div>
         <img src="https://external-preview.redd.it/v8TzlrG1zwUm79iMJatseQ5AecArdE5EybV4qj7mapQ.jpg?auto=webp&v=enabled&s=ba619a7c5e7e048bae312113ba7c585cc72201ef" alt="" class="barImg">
         <section id="info">
             <div class="baseGrid">
@@ -124,15 +129,21 @@
                     <img src="./img/requiem.jpg" alt="Cover for the movie Requiem for a dream">
                 </figure>
                 <figure>
-                    <figcaption>In Time</figcaption>
-                    <img src="./img/intime.jpg" alt="Cover for the movie In Time">
+                    <figcaption>Ex_Machina</figcaption>
+                    <img src="./img/ex_machina.jpg" alt="Cover for the movie Ex Machina">
                 </figure>
             </div>
         </section>
     </main>
-
+    <div class="popup">
+        <!--cross icon:-->
+        <span>&times;</span>
+        <img src="./img/akira.jpg" alt="images being shown in a bigger size">
+    </div>
     <footer>
        © Dwaynekoya
     </footer>
+    <!--popup images did not work when this was in head:-->
+    <script src="./js/main.js"></script>
 </body>
 </html>

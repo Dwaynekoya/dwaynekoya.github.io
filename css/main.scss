@@ -9,12 +9,6 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 200;
   }
-  .headertext {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    text-align: right;
-  }
   .hero {
     font-size: 2rem;
     min-width: 100%;
@@ -25,6 +19,16 @@ body {
     background-position: center;
    /* background-image: linear-gradient(to right, url("../img/yards.jpg") 0%, url("../img/yards.jpg") 50%,*/
      /*$colorfondo 50%, $colorfondo 100%);*/
+  }
+  header {
+    padding-right: 0.5em;
+  }
+  .headertext {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: inherit;
+    text-align: right;
   }
   a {
     font-size: 2em;
@@ -56,9 +60,10 @@ body {
     margin-bottom: 4em;
     margin-right:auto;
     margin-left:auto;
-    max-width: 90vw;
+    max-width: 80vw;
     min-height: 50vh;
   }
+
   section::before{
     content: "";
     background: $colorprimario;
@@ -135,7 +140,12 @@ body {
     display: block;
     margin: auto;
   }
-  
+  .discordLink {
+    width: max-content;
+    margin: auto;
+    padding-bottom: 2em;
+  }
+
   /*INFO GRID*/
   .infoRow {
     grid-column: span 3;
