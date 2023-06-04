@@ -1,0 +1,30 @@
+/*este es el que no tiene transicion y aparece y desaparece como un cabron en vez de fadear
+.splash{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    background-color: $colorfondo;
+    opacity: 0;
+    pointer-events: none;
+    transform: opacity 0.5s ease-in;
+}
+.active {
+    opacity: 1;
+    pointer-events: all;
+}*/
+@keyframes wipe-in-right {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+[transition-style="in:wipe:right"] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
+}/*# sourceMappingURL=splash.css.map */

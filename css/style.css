@@ -377,6 +377,37 @@ a {
     width: auto;
   }
 }
+/*este es el que no tiene transicion y aparece y desaparece como un cabron en vez de fadear
+.splash{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    background-color: $colorfondo;
+    opacity: 0;
+    pointer-events: none;
+    transform: opacity 0.5s ease-in;
+}
+.active {
+    opacity: 1;
+    pointer-events: all;
+}*/
+@keyframes wipe-in-right {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+[transition-style="in:wipe:right"] {
+  animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) wipe-in-right both;
+}
+
 /*PAGINA PRINCIPAL*/
 /*ABOUT ME*/
 * {
@@ -392,9 +423,9 @@ body {
 /*MASONRY - IMAGE LAYOUT*/
 .imageMasonry {
   display: grid;
-  grid-gap: 1em;
+  grid-gap: 1.5em;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  grid-auto-rows: 40vw;
+  grid-auto-rows: 30vh;
   grid-auto-flow: dense;
   margin-top: 3em;
   margin-bottom: 3em;
@@ -444,6 +475,7 @@ body {
 .imageMasonry .big {
   grid-column: span 2;
   grid-row: span 2;
+  padding: 0 0 1em 0;
 }
 
 /*SIDENAV*/
@@ -477,18 +509,16 @@ body {
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #d9d9d9;
   display: block;
   transition: 0.3s;
 }
 
-/* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #F9A933;
 }
 
-/* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -497,7 +527,7 @@ body {
   margin-left: 50px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+/*smaller screens */
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;

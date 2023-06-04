@@ -6,13 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dwaynekoya</title>
     <link rel="stylesheet" href="./css/style.css">
+    <!--splash screen-->
+   
     <!--FONT-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300" rel="stylesheet">
     <!--FONTAWESOME-->
     <script src="https://kit.fontawesome.com/700d30a34e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="hero">
+    <div class="splash active"></div>
+
+    <div class="hero" transition-style="in:wipe:right">
         <header>
             <span class="headertext">
                 software developer
@@ -24,7 +28,8 @@
     <!--MENU LATERAL-->
     <div>
         <nav id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <!--originally used onclick="closeNav()"-->
+            <a href="javascript:void(0)" class="closebtn" >&times;</a>
             <h3><a href="#top">DWAYNEKOYA</a></h3>
             <ul>
                 <li><a href="#aboutMe" class="smoothscroll">About me</a></li>
