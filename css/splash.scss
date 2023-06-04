@@ -22,7 +22,7 @@ $size: 15vw;
     opacity: 1;
     pointer-events: all;
 }*/
-// este de manera aleatoria hace que desaparezcan cosas
+// este de manera aleatoria hace que desaparezcan cosas en .hero ¿?
 @keyframes wipe-in-right {
     from {
       clip-path: inset(0 100% 0 0);
@@ -33,5 +33,5 @@ $size: 15vw;
   }
   
   [transition-style="in:wipe:right"] {
-    animation: 2.5s cubic-bezier(.25, 1, .30, 1) wipe-in-right both;
+    animation: 3s cubic-bezier(.25, 1, .30, 1) wipe-in-right both;
   }
