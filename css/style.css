@@ -248,10 +248,26 @@ a {
 }
 
 /*this is for project showcase*/
+#firstPic {
+  background-image: url("../img/nous.jpg");
+}
+
+#secondPic {
+  background-image: url("../img/thispage.png");
+}
+
+#thirdPic {
+  background-image: url("../img/vmi.png");
+}
+
+.thumbnail--awesome {
+  background-image: url("http://fc05.deviantart.net/fs70/f/2010/102/9/0/Google_Chrome_Wallpaper_by_dreski1992.jpg");
+}
+
 .showcase {
   position: relative;
-  max-width: 90vw;
-  min-height: 17em;
+  max-width: 80vw;
+  height: 17em;
   margin: 1em auto;
   overflow: hidden;
   background: transparent;
@@ -264,7 +280,7 @@ a {
   left: 0;
   right: 300px;
   z-index: 1;
-  background: #166464;
+  background: hsl(219, 34%, 24%);
   background-position: 50% 50%;
   background-size: cover;
   transition: right 250ms ease, left 250ms ease;
@@ -274,7 +290,7 @@ a {
   position: relative;
   padding-top: 8em;
   height: 100%;
-  background: #166464;
+  background: rgba(22, 100, 100, 0.5);
   text-align: center;
   opacity: 0;
   transition: opacity 250ms ease;
@@ -282,14 +298,13 @@ a {
 
 .desc {
   position: absolute;
-  max-width: 30em;
+  width: 25vw;
   height: 100%;
   top: 0;
   right: 0;
   padding: 20px;
   z-index: 2;
   background: #1e1e1e;
-  color: #d9d9d9;
   text-align: center;
   transition: background 250ms ease, color 250ms, width 250ms ease, padding 250ms ease;
 }
@@ -316,14 +331,11 @@ a {
   opacity: 1;
 }
 .showcase:hover .desc {
-  max-width: 30em;
+  width: 40vw;
   padding-left: 45px;
   padding-right: 45px;
-  background: #166464;
-  color: #d9d9d9;
-}
-.showcase:hover .desc h3 {
-  color: #F9A933;
+  background: #202426;
+  color: #fff;
 }
 .showcase:hover .desc:after {
   border-color: transparent #202426 transparent transparent;
@@ -335,12 +347,8 @@ a {
 }
 
 .showcase--inverted .desc {
-  max-width: 30em;
   left: 0;
   right: auto;
-}
-.showcase--inverted .desc h3 {
-  color: #F9A933;
 }
 .showcase--inverted .desc:after {
   left: auto;
@@ -353,30 +361,58 @@ a {
   right: -25px;
 }
 .showcase--inverted:hover .desc:after {
-  border-color: transparent transparent transparent #F9A933;
+  border-color: transparent transparent transparent #202426;
 }
 
 .btn {
   padding: 1em 2em;
-  border: 0.15em solid #d9d9d9;
+  border: 0.15em solid #F9A933;
   color: #d9d9d9;
   text-decoration: none;
+  font-size: 1em;
   font-weight: 700;
-  font-size: 2vh;
   transition: background 250ms;
 }
 .btn:hover {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
 }
 
-@media only screen and (max-width: 600px) {
-  .desc {
-    max-width: 40vw;
-  }
-  .thumbnail {
-    width: auto;
-  }
+.showcase--inverted .thumbnail {
+  right: 0;
+  left: 300px;
 }
+
+.showcase--inverted .desc {
+  left: 0;
+  right: auto;
+}
+.showcase--inverted .desc:after {
+  left: auto;
+  right: -20px;
+  border-color: transparent transparent transparent #fff;
+}
+
+.showcase--inverted:hover .thumbnail {
+  left: 325px;
+  right: -25px;
+}
+.showcase--inverted:hover .desc:after {
+  border-color: transparent transparent transparent #202426;
+}
+
+.btn {
+  padding: 1em 2em;
+  border: 0.15em solid #F9A933;
+  color: #d9d9d9;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 700;
+  transition: background 250ms;
+}
+.btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
 /*este es el que no tiene transicion y aparece y desaparece como un cabron en vez de fadear
 .splash{
     position: fixed;

@@ -1,12 +1,12 @@
 /* 
 splash screens
- */ 
+ 
 window.onload = () => {
     const splash = document.querySelector('.splash');
     setTimeout(() => {
         splash.classList.remove('active');
     }, 500)
-}
+} */
 
 /* 
 sideNav
