@@ -4,16 +4,29 @@ $colorsecundario: #F9A933;
 $colortexto: #d9d9d9;
 $size: 15vw;
 
-/*this is for project showcase*/
 $height: 17em;
-$width: 90vw;
-$transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
+$width: 80vw;
+$transition: ease; 
 
-// Wrapper
+
+//inserting pics in css
+#firstPic {
+  background-image: url("../img/nous.jpg");
+}
+#secondPic {
+  background-image: url("../img/thispage.png");
+}
+#thirdPic {
+  background-image: url("../img/vmi.png");
+}
+.thumbnail--awesome {
+  background-image: url("http://fc05.deviantart.net/fs70/f/2010/102/9/0/Google_Chrome_Wallpaper_by_dreski1992.jpg");
+}
+// container
 .showcase {
   position: relative;
   max-width: $width;
-  min-height: $height;
+  height: $height;
   margin: 1em auto;
   overflow: hidden;
   
@@ -29,7 +42,7 @@ $transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
   right: 300px;
   z-index: 1;
   
-  background: $colorprimario;
+  background: hsl(219, 34%, 24%);
   background-position: 50% 50%;
   background-size: cover;
   
@@ -38,10 +51,10 @@ $transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
 
 .thumbnail__overlay {
   position: relative;
-  padding-top: calc($height / 2) - 0.5em;
+  padding-top: calc($height / 2 - 0.5em);
   height: 100%;
   
-  background: $colorprimario;
+  background: rgba($color: $colorprimario, $alpha: 0.5);
   
   text-align: center;
   
@@ -50,10 +63,9 @@ $transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
   transition: opacity 250ms $transition;
 }
 
-// Description
 .desc {
   position: absolute;
-  max-width: 30em;
+  width: 25vw;
   height: 100%;
   top: 0;
   right: 0;
@@ -61,7 +73,6 @@ $transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
   z-index: 2;
   
   background: $colorfondo;
-  color: $colortexto;
   
   text-align: center;
   
@@ -93,16 +104,13 @@ $transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
     opacity: 1;
   }
   .desc {
-    max-width: 30em;
+    width: 40vw;
     padding-left: 45px;
     padding-right: 45px;
     
-    background: $colorprimario;
+    background: #202426;
     
-    color: $colortexto;
-    & h3 {
-      color:$colorsecundario;
-    }
+    color: #fff;
     
     &:after {
       border-color: transparent #202426 transparent transparent;
@@ -111,19 +119,16 @@ $transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
 }
 
 
-// left side info right side img
+// Inverted Project
 .showcase--inverted .thumbnail {
   right: 0;
   left: 300px;
 }
 
 .showcase--inverted .desc {
-  max-width: 30em;
   left: 0;
   right: auto;
-  & h3 {
-    color:$colorsecundario;
-  }
+  
   &:after {
     left: auto;
     right: -20px;
@@ -141,31 +146,73 @@ $transition: ease; //cubic-bezier(0.250, 0.250, 0.660, 1.650);
   .desc {
     
     &:after {
-      border-color: transparent transparent transparent $colorsecundario;
+      border-color: transparent transparent transparent #202426;
     }
   }
 }
 
-// Button styling
 .btn {
   padding: 1em 2em;
-  border: 0.15em solid $colortexto;
+  
+  border: 0.15em solid $colorsecundario;
   
   color: $colortexto;
   text-decoration: none;
+  font-size: 1em;
   font-weight: 700;
-  font-size: 2vh;
+  
   transition: background 250ms;
   
   &:hover {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.7);
   }
 }
-@media only screen and (max-width: 600px)  {
-  .desc {
-    max-width: 40vw;
+
+// Inverted Project
+.showcase--inverted .thumbnail {
+  right: 0;
+  left: 300px;
+}
+
+.showcase--inverted .desc {
+  left: 0;
+  right: auto;
+  
+  &:after {
+    left: auto;
+    right: -20px;
+    border-color: transparent transparent transparent #fff;
   }
+}
+
+.showcase--inverted:hover {
+  
   .thumbnail {
-    width: auto;
+    left: 325px;
+    right: -25px;
+  }
+
+  .desc {
+    
+    &:after {
+      border-color: transparent transparent transparent #202426;
+    }
+  }
+}
+
+.btn {
+  padding: 1em 2em;
+  
+  border: 0.15em solid $colorsecundario;
+  
+  color: $colortexto;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 700;
+  
+  transition: background 250ms;
+  
+  &:hover {
+    background: rgba(0,0,0,0.7);
   }
 }
