@@ -10,108 +10,8 @@
   background-image: url("../img/vmi.png");
 }
 
-.thumbnail--awesome {
-  background-image: url("http://fc05.deviantart.net/fs70/f/2010/102/9/0/Google_Chrome_Wallpaper_by_dreski1992.jpg");
-}
-
 .showcase {
-  position: relative;
-  max-width: 80vw;
-  height: 17em;
-  margin: 1em auto;
-  overflow: hidden;
-  background: transparent;
-}
-
-.thumbnail {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 300px;
-  z-index: 1;
-  background: hsl(219, 34%, 24%);
-  background-position: 50% 50%;
-  background-size: cover;
-  transition: right 250ms ease, left 250ms ease;
-}
-
-.thumbnail__overlay {
-  position: relative;
-  padding-top: 8em;
-  height: 100%;
-  background: rgba(22, 100, 100, 0.5);
-  text-align: center;
-  opacity: 0;
-  transition: opacity 250ms ease;
-}
-
-.desc {
-  position: absolute;
-  width: 25vw;
-  height: 100%;
-  top: 0;
-  right: 0;
-  padding: 20px;
-  z-index: 2;
-  background: #1e1e1e;
-  text-align: center;
-  transition: background 250ms ease, color 250ms, width 250ms ease, padding 250ms ease;
-}
-.desc:after {
-  display: block;
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 50%;
-  left: -20px;
-  margin-top: -10px;
-  border-style: solid;
-  border-width: 10px;
-  border-color: transparent #fff transparent transparent;
-  content: "";
-  transition: border-color 250ms;
-}
-
-.showcase:hover .thumbnail {
-  right: 325px;
-  left: -25px;
-}
-.showcase:hover .thumbnail__overlay {
-  opacity: 1;
-}
-.showcase:hover .desc {
-  width: 40vw;
-  padding-left: 45px;
-  padding-right: 45px;
-  background: #202426;
-  color: #fff;
-}
-.showcase:hover .desc:after {
-  border-color: transparent #202426 transparent transparent;
-}
-
-.showcase--inverted .thumbnail {
-  right: 0;
-  left: 300px;
-}
-
-.showcase--inverted .desc {
-  left: 0;
-  right: auto;
-}
-.showcase--inverted .desc:after {
-  left: auto;
-  right: -20px;
-  border-color: transparent transparent transparent #fff;
-}
-
-.showcase--inverted:hover .thumbnail {
-  left: 325px;
-  right: -25px;
-}
-.showcase--inverted:hover .desc:after {
-  border-color: transparent transparent transparent #202426;
+  flex-direction: column;
 }
 
 .btn {
@@ -124,41 +24,146 @@
   transition: background 250ms;
 }
 .btn:hover {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
 }
 
-.showcase--inverted .thumbnail {
-  right: 0;
-  left: 300px;
-}
-
-.showcase--inverted .desc {
-  left: 0;
-  right: auto;
-}
-.showcase--inverted .desc:after {
-  left: auto;
-  right: -20px;
-  border-color: transparent transparent transparent #fff;
-}
-
-.showcase--inverted:hover .thumbnail {
-  left: 325px;
-  right: -25px;
-}
-.showcase--inverted:hover .desc:after {
-  border-color: transparent transparent transparent #202426;
-}
-
-.btn {
-  padding: 1em 2em;
-  border: 0.15em solid #F9A933;
-  color: #d9d9d9;
-  text-decoration: none;
-  font-size: 1em;
-  font-weight: 700;
-  transition: background 250ms;
-}
-.btn:hover {
-  background: rgba(0, 0, 0, 0.7);
+@media only screen and (min-width: 40em) {
+  .showcase {
+    display: flex;
+    flex-direction: row;
+    max-width: 80vw;
+    height: 17em;
+    margin: 1em auto;
+    overflow: hidden;
+    background: transparent;
+  }
+  .thumbnail {
+    min-width: 50vw;
+    max-width: 70vw;
+    flex-grow: 1;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: transform 0.3s ease;
+  }
+  .thumbOverlay {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(22, 100, 100, 0.5);
+    text-align: center;
+    opacity: 0;
+    transition: opacity 250ms ease;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+  }
+  .desc {
+    position: relative;
+    justify-content: center;
+    min-width: 30vw;
+    padding: 20px;
+    z-index: 3;
+    background: #1e1e1e;
+    text-align: center;
+    transition: background 250ms ease, color 250ms, width 250ms ease, padding 250ms ease;
+    /*&:after {
+      z-index: 4;
+      content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #f2f2f2;
+      /*display: block;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: -20px;
+      margin-top: -10px;
+      border-style: solid;
+      border-width: 10px;
+      border-color: transparent #fff transparent transparent;
+      content: "";
+      transition: border-color 250ms;
+    }*/
+  }
+  .desc::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -20px; /* Adjust as needed */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px;
+    border-color: transparent #f2f2f2 transparent transparent;
+  }
+  .desc::after {
+    z-index: 4;
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #f2f2f2;
+  }
+  .showcase:hover .thumbnail {
+    transform: translateX(-10%);
+  }
+  .showcase:hover .thumbOverlay {
+    opacity: 1;
+  }
+  .showcase:hover .desc {
+    width: 120%;
+    margin-left: -10%;
+    padding-left: 45px;
+    padding-right: 45px;
+    background: #202426;
+    color: #fff;
+  }
+  .showcase:hover .desc::before {
+    border-color: transparent #202426 transparent transparent;
+  }
+  .showcase:hover .desc::after {
+    border-color: transparent #202426 transparent transparent;
+  }
+  .showcase:hover .desc span {
+    transform: scaleX(0.1);
+  }
+  .showcaseInverted:hover .thumbnail {
+    transform: translateX(10%);
+  }
+  .showcaseInverted:hover .thumbOverlay {
+    opacity: 1;
+  }
+  .showcaseInverted:hover .desc {
+    width: 120%;
+    margin-left: 0;
+    margin-right: -10%;
+    padding-left: 45px;
+    padding-right: 45px;
+    background: #202426;
+    color: #fff;
+  }
+  .showcaseInverted:hover .desc::before {
+    border-color: transparent #202426 transparent transparent;
+  }
+  .showcaseInverted:hover .desc::after {
+    right: -10px;
+    left: auto;
+    border-color: transparent #202426 transparent transparent;
+  }
+  .showcaseInverted:hover .desc span {
+    transform: scaleX(0.1);
+  }
 }/*# sourceMappingURL=showcase.css.map */

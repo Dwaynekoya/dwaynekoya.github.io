@@ -19,67 +19,83 @@ $transition: ease;
 #thirdPic {
   background-image: url("../img/vmi.png");
 }
-.thumbnail--awesome {
-  background-image: url("http://fc05.deviantart.net/fs70/f/2010/102/9/0/Google_Chrome_Wallpaper_by_dreski1992.jpg");
+
+.showcase{
+  flex-direction: column;
 }
-// container
+// this works nicely! 
+.btn {
+  padding: 1em 2em;
+  
+  border: 0.15em solid $colorsecundario;
+  
+  color: $colortexto;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 700;
+  
+  transition: background 250ms;
+  
+  &:hover {
+    background: rgba(0,0,0,0.8);
+  }
+}
+@media only screen and (min-width: 40em) {
+  
 .showcase {
-  position: relative;
+  display: flex;
+  flex-direction: row;
   max-width: $width;
   height: $height;
   margin: 1em auto;
   overflow: hidden;
-  
   background: transparent;
 }
 
-// Thumbnails
+
 .thumbnail {
-  position: absolute;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 300px;
-  z-index: 1;
-  
-  background: hsl(219, 34%, 24%);
+  min-width: 50vw;
+  max-width: 70vw;
+  flex-grow: 1;
   background-position: 50% 50%;
   background-size: cover;
-  
-  transition: right 250ms $transition, left 250ms $transition;
+  transition: transform 0.3s ease;
 }
-
-.thumbnail__overlay {
-  position: relative;
-  padding-top: calc($height / 2 - 0.5em);
+.thumbOverlay{
+  display: flex;
   height: 100%;
-  
-  background: rgba($color: $colorprimario, $alpha: 0.5);
-  
+  width: 100%;
+  background-color: rgba($color: $colorprimario, $alpha: 0.5);
   text-align: center;
-  
   opacity: 0;
-  
   transition: opacity 250ms $transition;
-}
-
-.desc {
-  position: absolute;
-  width: 25vw;
-  height: 100%;
-  top: 0;
-  right: 0;
-  padding: 20px;
   z-index: 2;
-  
+  justify-content: center;
+  align-items: center;
+}
+.desc {
+  position: relative;
+  justify-content: center;
+  min-width: 30vw;
+  padding: 20px;
+  z-index: 3;
   background: $colorfondo;
-  
   text-align: center;
-  
   transition: background 250ms $transition, color 250ms, width 250ms $transition, padding 250ms $transition;
-  
-  &:after {
-    display: block;
+  //triangle bit?
+  /*&:after {
+    z-index: 4;
+    content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #f2f2f2;
+    /*display: block;
     width: 0;
     height: 0;
     position: absolute;
@@ -91,20 +107,45 @@ $transition: ease;
     border-color: transparent #fff transparent transparent;
     content: "";
     transition: border-color 250ms;
-  }
+  }*/
 }
-
-.showcase:hover {
-  
+.desc::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -20px; /* Adjust as needed */
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px;
+  border-color: transparent #f2f2f2 transparent transparent;
+}
+// for inverted showcase
+.desc::after {
+  z-index: 4;
+    content: "";
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #f2f2f2;
+}
+.showcase:hover{
   .thumbnail {
-    right: 325px;
-    left: -25px;
+    transform: translateX(-10%);
   }
-  .thumbnail__overlay {
+  .thumbOverlay {
     opacity: 1;
   }
   .desc {
-    width: 40vw;
+    //transform: scaleX(1.2);
+    width: 120%;
+    margin-left: -10%;
     padding-left: 45px;
     padding-right: 45px;
     
@@ -112,107 +153,46 @@ $transition: ease;
     
     color: #fff;
     
-    &:after {
+    &::before {
+      border-color: transparent #202426 transparent transparent;
+    }
+    &::after {
       border-color: transparent #202426 transparent transparent;
     }
   }
-}
-
-
-// Inverted Project
-.showcase--inverted .thumbnail {
-  right: 0;
-  left: 300px;
-}
-
-.showcase--inverted .desc {
-  left: 0;
-  right: auto;
-  
-  &:after {
-    left: auto;
-    right: -20px;
-    border-color: transparent transparent transparent #fff;
+  .desc span {
+    transform: scaleX(0.1);
   }
 }
-
-.showcase--inverted:hover {
-  
+.showcaseInverted:hover {
   .thumbnail {
-    left: 325px;
-    right: -25px;
+    transform: translateX(10%);
   }
-
+  .thumbOverlay {
+    opacity: 1;
+  }
   .desc {
+    //transform: scaleX(1.2);
+    width: 120%;
+    margin-left: 0;
+    margin-right: -10%;
+    padding-left: 45px;
+    padding-right: 45px;
     
-    &:after {
-      border-color: transparent transparent transparent #202426;
+    background: #202426;
+    color: #fff;
+    
+    &::before {
+      border-color: transparent #202426 transparent transparent;
+    }
+    &::after {
+      right: -10px;
+      left: auto;
+      border-color: transparent #202426 transparent transparent;
     }
   }
-}
-
-.btn {
-  padding: 1em 2em;
-  
-  border: 0.15em solid $colorsecundario;
-  
-  color: $colortexto;
-  text-decoration: none;
-  font-size: 1em;
-  font-weight: 700;
-  
-  transition: background 250ms;
-  
-  &:hover {
-    background: rgba(0,0,0,0.7);
+  .desc span {
+    transform: scaleX(0.1);
   }
 }
-
-// Inverted Project
-.showcase--inverted .thumbnail {
-  right: 0;
-  left: 300px;
-}
-
-.showcase--inverted .desc {
-  left: 0;
-  right: auto;
-  
-  &:after {
-    left: auto;
-    right: -20px;
-    border-color: transparent transparent transparent #fff;
-  }
-}
-
-.showcase--inverted:hover {
-  
-  .thumbnail {
-    left: 325px;
-    right: -25px;
-  }
-
-  .desc {
-    
-    &:after {
-      border-color: transparent transparent transparent #202426;
-    }
-  }
-}
-
-.btn {
-  padding: 1em 2em;
-  
-  border: 0.15em solid $colorsecundario;
-  
-  color: $colortexto;
-  text-decoration: none;
-  font-size: 1em;
-  font-weight: 700;
-  
-  transition: background 250ms;
-  
-  &:hover {
-    background: rgba(0,0,0,0.7);
-  }
 }

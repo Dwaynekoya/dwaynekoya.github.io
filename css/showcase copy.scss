@@ -20,9 +20,6 @@ $transition: ease;
 #thirdPic {
   background-image: url("../img/vmi.png");
 }
-.thumbnail--awesome {
-  background-image: url("http://fc05.deviantart.net/fs70/f/2010/102/9/0/Google_Chrome_Wallpaper_by_dreski1992.jpg");
-}
 // container
 .showcase {
   position: relative;
@@ -50,7 +47,7 @@ $transition: ease;
   transition: right 250ms $transition, left 250ms $transition;
 }
 
-.thumbnail__overlay {
+.thumbOverlay {
   position: relative;
   padding-top: calc($height / 2 - 0.5em);
   height: 100%;
@@ -101,7 +98,7 @@ $transition: ease;
     right: 325px;
     left: -25px;
   }
-  .thumbnail__overlay {
+  .thumbOverlay {
     opacity: 1;
   }
   .desc {
@@ -121,12 +118,12 @@ $transition: ease;
 
 
 // Inverted Project
-.showcase--inverted .thumbnail {
+.showcaseInverted .thumbnail {
   right: 0;
   left: 300px;
 }
 
-.showcase--inverted .desc {
+.showcaseInverted .desc {
   left: 0;
   right: auto;
   
@@ -137,7 +134,7 @@ $transition: ease;
   }
 }
 
-.showcase--inverted:hover {
+.showcaseInverted:hover {
   
   .thumbnail {
     left: 325px;
