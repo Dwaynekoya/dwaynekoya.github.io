@@ -66,6 +66,7 @@ section {
   margin-left: auto;
   max-width: 80vw;
   min-height: 50vh;
+  vertical-align: middle;
 }
 
 section::before {
@@ -211,7 +212,7 @@ a {
   grid-template-areas: "info" "tech" "img";
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0 auto 4em auto;
 }
 
 .diamondImg {
