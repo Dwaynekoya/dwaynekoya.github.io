@@ -325,7 +325,7 @@ a {
 }
 
 .showcaseInverted .desc::after {
-  z-index: 4;
+  z-index: 10;
   content: "";
   position: absolute;
   bottom: -20px;
@@ -350,7 +350,7 @@ a {
   padding-top: 45px;
   padding-bottom: 45px;
   background: #202426;
-  color: #fff;
+  color: #d9d9d9;
 }
 .showcase:hover .desc::before {
   top: -20px;
@@ -373,8 +373,6 @@ a {
   margin-bottom: -10%;
   padding-top: 45px;
   padding-bottom: 45px;
-  background: #202426;
-  color: #fff;
 }
 .showcaseInverted:hover .desc::after {
   bottom: -20px;
@@ -402,6 +400,7 @@ a {
   .showcase {
     display: flex;
     flex-direction: row;
+    border-bottom: none;
   }
   .thumbnail {
     min-width: 50vw;
@@ -418,14 +417,14 @@ a {
     border-color: transparent #d9d9d9 transparent transparent;
   }
   .showcaseInverted .desc::after {
-    bottom: 0;
-    top: 50%;
-    right: -10px;
+    bottom: 50%;
+    right: -20px;
+    left: 100%;
     transform: translateX(0);
     transform: translateY(-50%);
     border-top: 10px solid transparent;
     border-bottom: 10px solid transparent;
-    border-left: 10px solid #f2f2f2;
+    border-left: 10px solid #d9d9d9;
   }
   .showcase:hover .thumbnail {
     transform: translateX(-10%);
@@ -442,6 +441,8 @@ a {
     color: #d9d9d9;
   }
   .showcase:hover .desc::before {
+    top: 50%;
+    bottom: 50%;
     left: -20px;
     right: auto;
     border-color: transparent #202426 transparent transparent;
@@ -463,9 +464,11 @@ a {
     color: #d9d9d9;
   }
   .showcaseInverted:hover .desc::after {
+    top: 50%;
+    bottom: 50%;
     right: -20px;
     left: auto;
-    border-color: transparent #202426 transparent transparent;
+    border-color: transparent transparent transparent #202426;
   }
   .showcaseInverted:hover .desc span {
     transform: scaleX(0.1);
@@ -512,6 +515,10 @@ a {
 
 body {
   font-size: 18px;
+}
+
+i {
+  padding: 0.5em;
 }
 
 /*MASONRY - IMAGE LAYOUT*/

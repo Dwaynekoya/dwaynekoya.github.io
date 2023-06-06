@@ -1,5 +1,7 @@
 @import 'darkModeColors';
 
+$lighterGray: #202426;
+
 $height: 17em;
 $width: 80vw;
 $transition: ease; 
@@ -76,7 +78,7 @@ $transition: ease;
 }
 // for inverted showcase
 .showcaseInverted .desc::after {
-  z-index: 4;
+  z-index: 10;
   content: "";
   position: absolute;
   bottom: -20px; //separating it from desc block
@@ -102,15 +104,15 @@ $transition: ease;
     padding-top: 45px;
     padding-bottom: 45px;
     
-    background: #202426;
+    background: $lighterGray;
     
-    color: #fff;
+    color: $colortexto;
     
     &::before {
       //transform: translateY(-10%);
       top: -20px;
       bottom: auto;
-      border-color: transparent transparent #202426   transparent;
+      border-color: transparent transparent $lighterGray   transparent;
     }
 
   }
@@ -131,13 +133,12 @@ $transition: ease;
     margin-bottom: -10%;
     padding-top: 45px;
     padding-bottom: 45px;
-    background: #202426;
-    color: #fff;
+
 
     &::after {
       bottom: -20px;
       top: auto;
-      border-color:  #202426 transparent transparent transparent;
+      border-color:  $lighterGray transparent transparent transparent;
     }
   }
   .desc span {
@@ -170,6 +171,7 @@ $transition: ease;
 .showcase {
   display: flex;
   flex-direction: row;
+  border-bottom: none;
 }
 
 
@@ -191,14 +193,15 @@ $transition: ease;
 }
 // for inverted showcase
 .showcaseInverted .desc::after {
-  bottom: 0;
-  top: 50%;
-  right: -10px;
+  //top: 50%;
+  bottom: 50%;
+  right: -20px;
+  left: 100%;
   transform: translateX(0);
   transform: translateY(-50%);
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
-  border-left: 10px solid #f2f2f2;
+  border-left: 10px solid $colortexto;
 }
 .showcase:hover{
   .thumbnail {
@@ -215,14 +218,18 @@ $transition: ease;
     padding-left: 45px;
     padding-right: 45px;
     
-    background: #202426;
+    background: $lighterGray;
     
     color: $colortexto;
     
     &::before {
+      //50 50 so that it stays centered
+      top: 50%;
+      bottom: 50%;
+      //moves it to the left
       left: -20px;
       right: auto;
-      border-color: transparent #202426 transparent transparent;
+      border-color: transparent $lighterGray transparent transparent;
     }
     
   }
@@ -242,13 +249,15 @@ $transition: ease;
     margin-left: 0;
     margin-right: -10%;
     
-    background: #202426;
+    background: $lighterGray;
     color: $colortexto;
     
     &::after {
+      top: 50%;
+      bottom: 50%;
       right: -20px;
       left: auto;
-      border-color: transparent #202426 transparent transparent;
+      border-color: transparent  transparent transparent $lighterGray;
     }
   }
   .desc span {
