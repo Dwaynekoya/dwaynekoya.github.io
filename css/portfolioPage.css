@@ -52,7 +52,7 @@ a {
 }
 
 #aboutMe .diamondImg {
-  max-width: 65vw;
+  max-width: 45vw;
   grid-area: img;
   text-align: center;
   padding: 20px;
