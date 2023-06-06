@@ -44,14 +44,17 @@ for(let link of navLinks){
 /*
 popup images
 */
+const body = document.querySelector('body');
 document.querySelectorAll('.imageMasonry img').forEach(image => {
     image.onclick = () => {
         //console.log(image.getAttribute('src'));
         document.querySelector('.popup').style.display = 'block';
         document.querySelector('.popup img').src = image.getAttribute('src');
+        body.style.overflow='hidden';
     }
 })
 document.querySelector('.popup span').onclick = () =>{
+    body.style.overflow='visible';
     document.querySelector('.popup').style.display = 'none';
 }
 
