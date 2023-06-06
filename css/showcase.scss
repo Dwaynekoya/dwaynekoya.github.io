@@ -1,8 +1,4 @@
-$colorfondo: #1e1e1e;
-$colorprimario: #166464;
-$colorsecundario: #F9A933;
-$colortexto: #d9d9d9;
-$size: 15vw;
+@import 'darkModeColors';
 
 $height: 17em;
 $width: 80vw;
@@ -21,47 +17,28 @@ $transition: ease;
 }
 
 .showcase{
-  flex-direction: column;
-}
-// this works nicely! 
-.btn {
-  padding: 1em 2em;
-  
-  border: 0.15em solid $colorsecundario;
-  
-  color: $colortexto;
-  text-decoration: none;
-  font-size: 1em;
-  font-weight: 700;
-  
-  transition: background 250ms;
-  
-  &:hover {
-    background: rgba(0,0,0,0.8);
-  }
-}
-@media only screen and (min-width: 40em) {
-  
-.showcase {
+  position: relative;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   max-width: $width;
-  height: $height;
+  min-height: $height;
   margin: 1em auto;
   overflow: hidden;
   background: transparent;
+  border-bottom: 3px solid $coloroscuro;
 }
-
-
 .thumbnail {
-  min-width: 50vw;
-  max-width: 70vw;
+  position: relative;
+  min-height: 30vh;
   flex-grow: 1;
   background-position: 50% 50%;
   background-size: cover;
   transition: transform 0.3s ease;
 }
 .thumbOverlay{
+  position: absolute;
+  top: 0;
+  left: 0;
   display: flex;
   height: 100%;
   width: 100%;
@@ -82,83 +59,172 @@ $transition: ease;
   background: $colorfondo;
   text-align: center;
   transition: background 250ms $transition, color 250ms, width 250ms $transition, padding 250ms $transition;
-  //triangle bit?
-  /*&:after {
-    z-index: 4;
-    content: "";
-  position: absolute;
-  top: 50%;
-  right: -10px;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #f2f2f2;
-    /*display: block;
-    width: 0;
-    height: 0;
-    position: absolute;
-    top: 50%;
-    left: -20px;
-    margin-top: -10px;
-    border-style: solid;
-    border-width: 10px;
-    border-color: transparent #fff transparent transparent;
-    content: "";
-    transition: border-color 250ms;
-  }*/
 }
 .desc::before {
+   z-index: 10;
+    content: "";
+  position: absolute;
+  top: -10px; /* Position the arrow above the .desc element */
+  left: 50%; /* Position the arrow horizontally centered */
+  transform: translateX(-50%); /* Center the arrow horizontally */
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent $colortexto transparent; /* Adjust the color as needed */
+}
+.showcaseInverted .desc::before {
+  display: none;
+}
+// for inverted showcase
+.showcaseInverted .desc::after {
+  z-index: 4;
   content: "";
   position: absolute;
-  top: 50%;
-  left: -20px; /* Adjust as needed */
-  transform: translateY(-50%);
+  bottom: -20px; //separating it from desc block
+  left: 50%;
+  transform: translateX(-50%);
   width: 0;
   height: 0;
   border-style: solid;
   border-width: 10px;
-  border-color: transparent #f2f2f2 transparent transparent;
-}
-// for inverted showcase
-.desc::after {
-  z-index: 4;
-    content: "";
-  position: absolute;
-  top: 50%;
-  right: -10px;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 10px solid #f2f2f2;
+  border-color:  $colortexto transparent transparent transparent;
+
 }
 .showcase:hover{
   .thumbnail {
-    transform: translateX(-10%);
+    transform: translateY(-10%);
   }
   .thumbOverlay {
     opacity: 1;
   }
   .desc {
-    //transform: scaleX(1.2);
-    width: 120%;
-    margin-left: -10%;
-    padding-left: 45px;
-    padding-right: 45px;
+    height: 120%;
+    margin-top: -10%;
+    padding-top: 45px;
+    padding-bottom: 45px;
     
     background: #202426;
     
     color: #fff;
     
     &::before {
-      border-color: transparent #202426 transparent transparent;
+      //transform: translateY(-10%);
+      top: -20px;
+      bottom: auto;
+      border-color: transparent transparent #202426   transparent;
     }
+
+  }
+  .desc span {
+    transform: scaleY(0.1);
+  }
+}
+.showcaseInverted:hover {
+  .thumbnail {
+    transform: translateY(10%);
+  }
+  .thumbOverlay {
+    opacity: 1;
+  }
+  .desc {
+    height: 120%;
+    margin-top: 0;
+    margin-bottom: -10%;
+    padding-top: 45px;
+    padding-bottom: 45px;
+    background: #202426;
+    color: #fff;
+
     &::after {
+      bottom: -20px;
+      top: auto;
+      border-color:  #202426 transparent transparent transparent;
+    }
+  }
+  .desc span {
+    transform: scaleY(0.1);
+  }
+}
+// this works nicely! 
+.btn {
+  padding: 1em 2em;
+  
+  border: 0.15em solid $colorsecundario;
+  
+  color: $colortexto;
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 700;
+  
+  transition: background 250ms;
+  
+  &:hover {
+    background: rgba(0,0,0,0.8);
+  }
+}
+
+
+
+//pc screen
+@media only screen and (min-width: 40em) {
+  
+.showcase {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.thumbnail {
+  min-width: 50vw;
+  max-width: 70vw;
+  flex-grow: 1;
+
+}
+
+.desc::before {
+  top: 50%;
+  left: -20px; 
+  transform: translateY(-50%);
+  transform: translateX(0);
+  /*width: 0;
+  height: 0;*/
+  border-color: transparent $colortexto transparent transparent;
+}
+// for inverted showcase
+.showcaseInverted .desc::after {
+  bottom: 0;
+  top: 50%;
+  right: -10px;
+  transform: translateX(0);
+  transform: translateY(-50%);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 10px solid #f2f2f2;
+}
+.showcase:hover{
+  .thumbnail {
+    //transform: translateY(0);
+    transform: translateX(-10%);
+  }
+  .desc {
+    //transform: scaleX(1.2);
+    height: auto;
+    width: 120%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -10%;
+    padding-left: 45px;
+    padding-right: 45px;
+    
+    background: #202426;
+    
+    color: $colortexto;
+    
+    &::before {
+      left: -20px;
+      right: auto;
       border-color: transparent #202426 transparent transparent;
     }
+    
   }
   .desc span {
     transform: scaleX(0.1);
@@ -166,27 +232,21 @@ $transition: ease;
 }
 .showcaseInverted:hover {
   .thumbnail {
+    transform: translateY(0);
     transform: translateX(10%);
   }
   .thumbOverlay {
     opacity: 1;
   }
   .desc {
-    //transform: scaleX(1.2);
-    width: 120%;
     margin-left: 0;
     margin-right: -10%;
-    padding-left: 45px;
-    padding-right: 45px;
     
     background: #202426;
-    color: #fff;
+    color: $colortexto;
     
-    &::before {
-      border-color: transparent #202426 transparent transparent;
-    }
     &::after {
-      right: -10px;
+      right: -20px;
       left: auto;
       border-color: transparent #202426 transparent transparent;
     }

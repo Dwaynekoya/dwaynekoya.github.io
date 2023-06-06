@@ -5,19 +5,12 @@
 // showcase part 
 @use 'showcase';
 @use 'splash';
-
-$colorfondo: #1e1e1e;
-$coloroscuro: #131313;
-$colorprimario: #166464;
-$colorsecundario: #F9A933;
-$colortexto: #d9d9d9;
-$size: 15vw;
+@import 'darkModeColors';
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    
+    box-sizing: border-box; 
 }  
 body {
   font-size: 18px;
@@ -133,11 +126,13 @@ body {
   top: 0;
   left: 0;
   background-color: $coloroscuro;
-  height: 100svh;
+  height: 100dvh;
   width: 100svw;
   z-index: 50;
+  overflow: hidden;
 }
 .popup span{
+  z-index: 100;
   font-size: 4em;
   position: absolute;
   top: 0;
@@ -156,3 +151,4 @@ body {
   max-width: 80dvw;
   object-fit:contain;
 }
+

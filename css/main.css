@@ -27,6 +27,7 @@ header {
   right: 0;
   padding: inherit;
   text-align: right;
+  font-weight: bold;
 }
 
 a {

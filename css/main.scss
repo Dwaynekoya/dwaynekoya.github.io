@@ -1,7 +1,4 @@
-$colorfondo: #1e1e1e;
-$colorprimario: #166464;
-$colorsecundario: #F9A933;
-$colortexto: #d9d9d9;
+@import 'darkModeColors';
 $size: 15vw;
 body {
     background-color: $colorfondo;
@@ -29,6 +26,7 @@ body {
     right: 0;
     padding: inherit;
     text-align: right;
+    font-weight: bold;
   }
   a {
     font-size: 2em;
